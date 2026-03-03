@@ -4,90 +4,93 @@ import { Poster_1, Poster_2 } from "./assets";
 // ─── THEME TOKENS ───────────────────────────────────────────────
 const themes = {
   dark: {
-    bg:             "#0A0A0A",
-    bgHero:         "#0A0A0A",
-    bgSection:      "rgba(245,200,0,0.04)",
-    bgCard:         "rgba(245,200,0,0.04)",
-    bgCardHover:    "rgba(245,200,0,0.08)",
-    bgFooter:       "#050505",
-    text:           "#F5F0E8",
-    textMuted:      "rgba(245,240,232,0.5)",
-    textSub:        "rgba(245,240,232,0.6)",
-    border:         "rgba(245,200,0,0.12)",
-    borderSection:  "rgba(245,200,0,0.1)",
-    borderTopBar:   "rgba(245,200,0,0.2)",
-    tagBorder:      "rgba(245,240,232,0.2)",
-    tagColor:       "rgba(245,240,232,0.7)",
-    heroGlow1:      "rgba(245,200,0,0.12)",
-    heroGlow2:      "rgba(212,160,23,0.08)",
+    bg: "#0A0A0A",
+    bgHero: "#0A0A0A",
+    bgSection: "rgba(245,200,0,0.04)",
+    bgCard: "rgba(245,200,0,0.04)",
+    bgCardHover: "rgba(245,200,0,0.08)",
+    bgFooter: "#050505",
+    text: "#F5F0E8",
+    textMuted: "rgba(245,240,232,0.5)",
+    textSub: "rgba(245,240,232,0.6)",
+    border: "rgba(245,200,0,0.12)",
+    borderSection: "rgba(245,200,0,0.1)",
+    borderTopBar: "rgba(245,200,0,0.2)",
+    tagBorder: "rgba(245,240,232,0.2)",
+    tagColor: "rgba(245,240,232,0.7)",
+    heroGlow1: "rgba(245,200,0,0.12)",
+    heroGlow2: "rgba(212,160,23,0.08)",
     heroTextShadow: "8px 8px 0px rgba(0,0,0,0.5), 0 0 80px rgba(245,200,0,0.3)",
-    grainOpacity:   "0.4",
-    showCardBg:     "linear-gradient(135deg,rgba(245,200,0,0.08),rgba(245,200,0,0.02))",
+    grainOpacity: "0.4",
+    showCardBg: "linear-gradient(135deg,rgba(245,200,0,0.08),rgba(245,200,0,0.02))",
     showCardBorder: "rgba(245,200,0,0.15)",
-    sukhumvitBg:    "rgba(21,101,192,0.15)",
-    scrollHintClr:  "rgba(245,240,232,0.4)",
-    ctaBtnBg:       "#F5C800",
-    ctaBtnClr:      "#0A0A0A",
-    cardShadow:     "none",
-    themeBtnBg:     "rgba(245,200,0,0.1)",
+    sukhumvitBg: "rgba(21,101,192,0.15)",
+    scrollHintClr: "rgba(245,240,232,0.4)",
+    ctaBtnBg: "#F5C800",
+    ctaBtnClr: "#0A0A0A",
+    cardShadow: "none",
+    themeBtnBg: "rgba(245,200,0,0.1)",
     themeBtnBorder: "rgba(245,200,0,0.4)",
-    themeBtnClr:    "#F5C800",
+    themeBtnClr: "#F5C800",
   },
   light: {
-    bg:             "#FFFBF0",
-    bgHero:         "#FFF8E1",
-    bgSection:      "rgba(245,200,0,0.06)",
-    bgCard:         "#FFFFFF",
-    bgCardHover:    "#FFFDE7",
-    bgFooter:       "#1A1200",
-    text:           "#1A1200",
-    textMuted:      "rgba(26,18,0,0.5)",
-    textSub:        "rgba(26,18,0,0.65)",
-    border:         "rgba(180,130,0,0.2)",
-    borderSection:  "rgba(180,130,0,0.15)",
-    borderTopBar:   "rgba(180,130,0,0.2)",
-    tagBorder:      "rgba(26,18,0,0.18)",
-    tagColor:       "rgba(26,18,0,0.65)",
-    heroGlow1:      "rgba(245,200,0,0.3)",
-    heroGlow2:      "rgba(212,160,23,0.18)",
+    bg: "#FFFBF0",
+    bgHero: "#FFF8E1",
+    bgSection: "rgba(245,200,0,0.06)",
+    bgCard: "#FFFFFF",
+    bgCardHover: "#FFFDE7",
+    bgFooter: "#1A1200",
+    text: "#1A1200",
+    textMuted: "rgba(26,18,0,0.5)",
+    textSub: "rgba(26,18,0,0.65)",
+    border: "rgba(180,130,0,0.2)",
+    borderSection: "rgba(180,130,0,0.15)",
+    borderTopBar: "rgba(180,130,0,0.2)",
+    tagBorder: "rgba(26,18,0,0.18)",
+    tagColor: "rgba(26,18,0,0.65)",
+    heroGlow1: "rgba(245,200,0,0.3)",
+    heroGlow2: "rgba(212,160,23,0.18)",
     heroTextShadow: "4px 4px 0px rgba(180,130,0,0.2), 0 0 50px rgba(245,200,0,0.2)",
-    grainOpacity:   "0.12",
-    showCardBg:     "linear-gradient(135deg,rgba(245,200,0,0.1),rgba(212,160,23,0.04))",
+    grainOpacity: "0.12",
+    showCardBg: "linear-gradient(135deg,rgba(245,200,0,0.1),rgba(212,160,23,0.04))",
     showCardBorder: "rgba(180,130,0,0.2)",
-    sukhumvitBg:    "rgba(21,101,192,0.06)",
-    scrollHintClr:  "rgba(26,18,0,0.35)",
-    ctaBtnBg:       "#0A0A0A",
-    ctaBtnClr:      "#F5C800",
-    cardShadow:     "0 2px 16px rgba(0,0,0,0.07)",
-    themeBtnBg:     "rgba(26,18,0,0.06)",
+    sukhumvitBg: "rgba(21,101,192,0.06)",
+    scrollHintClr: "rgba(26,18,0,0.35)",
+    ctaBtnBg: "#0A0A0A",
+    ctaBtnClr: "#F5C800",
+    cardShadow: "0 2px 16px rgba(0,0,0,0.07)",
+    themeBtnBg: "rgba(26,18,0,0.06)",
     themeBtnBorder: "rgba(26,18,0,0.2)",
-    themeBtnClr:    "#1A1200",
+    themeBtnClr: "#1A1200",
   },
 } as const;
 
-type Theme = typeof themes.dark;
+// type Theme = (typeof themes)[keyof typeof themes];
 
 // ─── DATA ───────────────────────────────────────────────────────
 const workshops = [
-  { num: "01", icon: "🍚", title: "Khao Tom Mud",         sub: "Sticky Rice & Banana Wrap" },
-  { num: "02", icon: "🥗", title: "Som Tam",               sub: "Thai Papaya Salad Workshop" },
-  { num: "03", icon: "🌸", title: "Flower Garland",        sub: "Traditional Phuang Malai Making" },
+  { num: "01", icon: "🍚", title: "Khao Tom Mud", sub: "Sticky Rice & Banana Wrap" },
+  { num: "02", icon: "🥗", title: "Som Tam", sub: "Thai Papaya Salad Workshop" },
+  { num: "03", icon: "🌸", title: "Flower Garland", sub: "Traditional Phuang Malai Making" },
   { num: "04", icon: "💧", title: "Water Blessing Ritual", sub: "Song Nam Phra — Songkran Tradition" },
 ];
 const shows = [
   { emoji: "🎶", name: "Mor Lam Performance", desc: "Join in and dance · Traditional northeastern Thai music & performance" },
-  { emoji: "🥁", name: "Long Drum Dance",     desc: "Witness the ancient Glong Yao drum performance · Cultural spectacle" },
+  { emoji: "🥁", name: "Long Drum Dance", desc: "Witness the ancient Glong Yao drum performance · Cultural spectacle" },
 ];
 const highlights = [
-  { icon: "👘", name: "Thai Costume",      desc: "Dress up in traditional Thai attire for stunning photos" },
+  { icon: "👘", name: "Thai Costume", desc: "Dress up in traditional Thai attire for stunning photos" },
   { icon: "🏪", name: "Thai Local Market", desc: "Browse vendors in authentic local market style" },
-  { icon: "🍜", name: "Local Food & Fun",  desc: "Taste authentic Thai street food & flavors" },
-  { icon: "💦", name: "Water Fight Zone",  desc: "Classic Songkran water battle — come ready to get wet!" },
+  { icon: "🍜", name: "Local Food & Fun", desc: "Taste authentic Thai street food & flavors" },
+  { icon: "💦", name: "Water Fight Zone", desc: "Classic Songkran water battle — come ready to get wet!" },
 ];
-const marqueeItems = ["SONGKRAN","BANGKOK","สงกรานต์","13–15 APRIL","CHAPTER MARKET","SUKHUMVIT 26"];
+const marqueeItems = ["SONGKRAN", "BANGKOK", "สงกรานต์", "13–15 APRIL", "CHAPTER MARKET", "SUKHUMVIT 26"];
 
 // ─── STYLES FACTORY ─────────────────────────────────────────────
-function buildStyles(t: Theme, isDark: boolean): string {
+function buildStyles(
+  t: (typeof themes)[keyof typeof themes],
+  isDark: boolean
+): string {
   return `
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@300;400;600;700&family=Playfair+Display:ital@0;1&display=swap');
 
@@ -356,7 +359,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
 export default function SongkranLanding() {
   const [isDark, setIsDark] = useState(false);
   const revealRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const t = isDark ? themes.dark : themes.light;
+  const t = themes[isDark ? "dark" : "light"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -414,7 +417,7 @@ export default function SongkranLanding() {
             <div className="hero-year">2026</div>
             <div className="hero-date-badge">13 – 15 April 2026</div>
             <div className="hero-tags">
-              {["Hands-on Thai Workshops","Live Cultural Shows","Local Market Vibes","Water Fight Zone"].map((tag) => (
+              {["Hands-on Thai Workshops", "Live Cultural Shows", "Local Market Vibes", "Water Fight Zone"].map((tag) => (
                 <span key={tag} className="hero-tag">{tag}</span>
               ))}
             </div>
@@ -429,9 +432,9 @@ export default function SongkranLanding() {
         <section style={{ background: t.bg, transition: "background 0.45s" }}>
           <div className="poster-section">
             <div className="poster-section-header reveal" ref={addRevealRef}>
-              <div className="section-eyebrow" style={{ justifyContent:"center" }}>Official Event Posters</div>
-              <h2 className="section-title" style={{ textAlign:"center" }}>
-                SONG<span style={{ color:t.text, WebkitTextStroke:"2px #F5C800" }}>KRAN</span> 2026
+              <div className="section-eyebrow" style={{ justifyContent: "center" }}>Official Event Posters</div>
+              <h2 className="section-title" style={{ textAlign: "center" }}>
+                SONG<span style={{ color: t.text, WebkitTextStroke: "2px #F5C800" }}>KRAN</span> 2026
               </h2>
             </div>
             <div className="poster-grid reveal" ref={addRevealRef}>
@@ -535,7 +538,7 @@ export default function SongkranLanding() {
         <section className="location-section">
           <div className="location-info reveal" ref={addRevealRef}>
             <div className="section-eyebrow">Getting Here</div>
-            <h2 className="section-title" style={{ fontSize:"clamp(36px,6vw,72px)", marginBottom:30 }}>
+            <h2 className="section-title" style={{ fontSize: "clamp(36px,6vw,72px)", marginBottom: 30 }}>
               FIND<br />US HERE
             </h2>
             <div className="bts-badge">BTS Phrom Phong</div>
