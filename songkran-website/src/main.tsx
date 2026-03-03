@@ -1,10 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import PageAll from './App'
+import SongkranLanding from './SongkranLanding'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <PageAll />
+    <SongkranLanding />
   </StrictMode>,
 )

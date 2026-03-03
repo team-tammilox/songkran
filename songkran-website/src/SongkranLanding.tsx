@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Poster_1, Poster_2 } from "../assets";
+import { Poster_1, Poster_2 } from "./assets";
 
 // ─── THEME TOKENS ───────────────────────────────────────────────
 const themes = {
