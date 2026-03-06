@@ -1,5 +1,5 @@
 # robots.txt — Chapter Market
-# Place at: https://www.chaptermarket.co.th/robots.txt
+# Place at: https://www.songkran-chapter.com//robots.txt
 
 User-agent: *
 Allow: /
@@ -10,4 +10,4 @@ Disallow: /_next/static/chunks/
 Disallow: /api/
 
 # Sitemap location — Google will discover this automatically
-Sitemap: https://www.chaptermarket.co.th/sitemap.xml
+Sitemap: https://www.songkran-chapter.com/sitemap.xml

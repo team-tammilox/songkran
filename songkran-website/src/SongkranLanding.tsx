@@ -1,20 +1,20 @@
 import { useEffect, useRef, useState } from "react";
-import { Poster_1, Poster_2, Poster_3, photo_section } from "./assets";
+import { Poster_1, Poster_2, Poster_3, photo_section, galah, sack } from "./assets";
 import SongkranSEO from "./components/SEO";
 
 // Photo imports — 10 event images
 import Photo_WaterDance from "./assets/20260305_1501_Image Generation_simple_compose_01kjyg82k1fe3smdrnyennabnj.png";
-import Photo_DrumParade from "./assets/20260305_1355_Image Generation_simple_compose_01kjycejr0fzb8fk6zq53xfqy0.png";
+import Photo_DrumParade from "./assets/long.png";
 import Photo_RiceWrap from "./assets/kao.jpg";
-import Photo_Garland from "./assets/malai.jpg";
-import Photo_Costume from "./assets/20260305_1420_Image Generation_simple_compose_01kjydv50sep0s23xv1hsxpjg1.png";
+import Photo_Garland from "./assets/malaiii.jpg";
+import Photo_Costume from "./assets/thai.jpg";
 import Photo_Somtam from "./assets/somtam.jpg";
 import Photo_Market from "./assets/20260306_1922_Image Generation_remix_01kk1hg4p7ft2aqc4kcx0e0tmn.png";
-import Photo_Food from "./assets/20260305_1424_Image Generation_simple_compose_01kjye3xxvfed8z926y79nagdw.png";
-import Photo_Procession from "./assets/messageImage_1772800884529.jpg";
+import Photo_Food from "./assets/kanom.jpg";
+import Photo_MorLam from "./assets/messageImage_1772800884529.jpg";
 import Photo_Lotus from "./assets/lotus.jpg";
-import Photo_WaterFight from "./assets/20260305_1501_Image Generation_simple_compose_01kjyg82k1fe3smdrnyennabnj.png";
-import Photus_Flag from "./assets/flag.jpg"
+import Photo_WaterFight from "./assets/20260305_1453_Image Generation_simple_compose_01kjyfqwwbe7dvsb0c2zs5bg3n.png";
+import Photo_Flag from "./assets/flag.jpg";
 
 // ─── THEME TOKENS ───────────────────────────────────────────────
 const themes = {
@@ -93,6 +93,7 @@ type Theme = {
 
 // ─── DATA ───────────────────────────────────────────────────────
 type Workshop = { num: string; title: string; sub: string; photo: string; icon?: string };
+type Game = { name: string; desc: string; photo: string; emoji?: string };
 type Show = { name: string; desc: string; photo: string; emoji?: string };
 type Highlight = { name: string; desc: string; photo: string; icon?: string };
 
@@ -105,10 +106,15 @@ const workshops: Workshop[] = [
 ];
 
 const shows: Show[] = [
-  { name: "Mor Lam Performance", desc: "Join in and dance · Traditional northeastern Thai music & performance", photo: Photo_DrumParade },
-  { name: "Long Drum Dance", desc: "Witness the ancient Glong Yao drum performance · Cultural spectacle", photo: Photo_Procession },
-  { name: "Flag Parade Folding", desc: "Experience the vibrant Thai flag parade · A colorful procession", photo: Photus_Flag },
+  { name: "Mor Lam Performance", desc: "Join in and dance · Traditional northeastern Thai music & performance", photo: Photo_MorLam },
+  { name: "Long Drum Dance", desc: "Witness the ancient Glong Yao drum performance · Cultural spectacle", photo: Photo_DrumParade },
+  { name: "Flag Parade Folding", desc: "Experience the vibrant Thai flag parade · A colorful procession", photo: Photo_Flag },
 ];
+
+const thaigames: Game[] = [
+  { name: "Galah", desc: "Traditional Thai tag game · Fast-paced and fun", photo: galah },
+  { name: "Sack Race", desc: "Hop your way to victory · Classic sack racing game", photo: sack },
+]
 
 const highlights: Highlight[] = [
   { name: "Thai Costume", desc: "Dress up in traditional Thai attire for stunning photos", photo: Photo_Costume },
@@ -317,7 +323,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
   .poster2-bg-col {
     position: relative;
     overflow: hidden;
-    height: 860px;
+    height: 930px;
   }
   .poster2-bg-img {
     position: absolute;
@@ -350,7 +356,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(245,200,0,0.12);
+    background: rgba(0,0,0,0.5);
     border: 1px solid rgba(245,200,0,0.35);
     color: #F5C800;
     font-size: 11px;
@@ -361,6 +367,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     margin-bottom: 32px;
     width: fit-content;
     font-weight: 600;
+    backdrop-filter: blur(6px);
   }
   .poster2-pill::before { content:'✦'; font-size:9px; }
   .poster2-list-group { margin-bottom: 36px; }
@@ -454,16 +461,22 @@ function buildStyles(t: Theme, isDark: boolean): string {
   .ticket-location-addr { font-size:13px; opacity:0.6; letter-spacing:1px; line-height:1.6; }
 
   .cta-btn { display:inline-block; background:${t.ctaBtnBg}; color:${t.ctaBtnClr}; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:5px; padding:18px 50px; text-decoration:none; position:relative; overflow:hidden; cursor:pointer; border:none; transition:color 0.3s; }
-  .cta-btn::after { content:''; position:absolute; inset:0; background:#F5C800; transform:translateX(-100%); transition:transform 0.3s; }
+  .cta-btn::after { content:''; position:absolute; inset:0; background:#fff; transform:translateX(-100%); transition:transform 0.3s; }
   .cta-btn:hover { color:#0A0A0A; }
   .cta-btn:hover::after { transform:translateX(0); }
   .cta-btn span { position:relative; z-index:1; }
 
-  .cta-btn_contact { display:inline-block; background:${t.ctaBtnBg}; color:${t.ctaBtnClr}; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:5px; padding:18px 50px; text-decoration:none; position:relative; overflow:hidden; cursor:pointer; border:none; transition:color 0.3s; }
-  .cta-btn_contact::after { content:''; position:absolute; inset:0; background:#F5C800; transform:translateX(-100%); transition:transform 0.3s; }
-  .cta-btn_contact:hover { color:#0A0A0A; }
+  .cta-btn_contact { display:inline-block; background:${t.ctaBtnBg};  color:${t.ctaBtnClr}; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:5px; padding:18px 50px; text-decoration:none; position:relative; overflow:hidden; cursor:pointer; border:none; transition:all 0.3s; }
+  .cta-btn_contact::after { content:''; position:absolute; inset:0;  background:#fff; transform:translateX(-100%); transition:transform 0.3s; }
+  .cta-btn_contact:hover { color:#0A0A0A; border:2px solid #000; }
   .cta-btn_contact:hover::after { transform:translateX(0); }
   .cta-btn_contact span { position:relative; z-index:1; }
+
+  .cta-btn_footer { display:inline-block; background: #fff; color:#000; border-radius:12px; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:5px; padding:18px 50px; text-decoration:none; position:relative; overflow:hidden; cursor:pointer; border:none; transition:color 0.3s; }
+  .cta-btn_footer::after { content:''; position:absolute; inset:0; background:#F5C800; transform:translateX(-100%); transition:transform 0.3s; }
+  .cta-btn_footer:hover { color:#0A0A0A; }
+  .cta-btn_footer:hover::after { transform:translateX(0); }
+  .cta-btn_footer span { position:relative; z-index:1; }
   /* ── PROGRAM ── */
   .program-section { padding:100px 40px; max-width:1500px; margin:0 auto; }
   .section-eyebrow { font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#F5C800; margin-bottom:16px; display:flex; align-items:center; gap:16px; }
@@ -479,6 +492,11 @@ function buildStyles(t: Theme, isDark: boolean): string {
     height: 220px;
     overflow: hidden;
   }
+  
+  @media(max-width:768px) {
+    .workshops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  }
+
   .workshop-card-photo img {
     width: 100%;
     height: 100%;
@@ -502,6 +520,29 @@ function buildStyles(t: Theme, isDark: boolean): string {
   .workshop-icon { font-size:32px; margin-bottom:16px; }
   .workshop-title { font-size:20px; font-weight:600; color:#F5C800; margin-bottom:6px; }
   .workshop-sub { font-size:14px; color:${t.textMuted}; font-weight:300; transition:color 0.45s; }
+
+  /* ── GAMES ── */
+  .games-section { padding:100px 40px; max-width:1500px; margin:0 auto; }
+  .games-row { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:0; }
+  .game-card {
+    position:relative; overflow:hidden;
+    background:${t.bgCard}; border:1px solid ${t.border};
+    transition:all 0.4s; box-shadow:${t.cardShadow};
+    display:flex; flex-direction:column;
+  }
+  .game-card:hover { border-color:#F5C800; transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(245,200,0,0.25); }
+  .game-card-photo { width:100%; height:320px; overflow:hidden; position:relative; flex-shrink:0; }
+  .game-card-photo img { width:100%; height:100%; object-fit:cover; object-position:center 25%; transition:transform 0.6s ease; display:block; }
+  .game-card:hover .game-card-photo img { transform:scale(1.06); }
+  .game-card-photo-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%); z-index:1; }
+  .game-card-body { padding:32px 36px 40px; display:flex; flex-direction:column; gap:10px; position:relative; z-index:1; flex:1; }
+  .game-card-icon { font-size:36px; margin-bottom:4px; }
+  .game-card-name { font-family:'Bebas Neue',sans-serif; font-size:36px; letter-spacing:2px; color:${t.text}; line-height:1; transition:color 0.45s; }
+  .game-card-name-th { font-family:'Kanit',sans-serif; font-size:15px; font-weight:300; color:#F5C800; letter-spacing:2px; margin-bottom:4px; }
+  .game-card-desc { font-size:13px; color:${t.textMuted}; font-weight:300; letter-spacing:0.5px; line-height:1.7; transition:color 0.45s; }
+  .game-card-tag { display:inline-flex; align-items:center; gap:6px; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(245,200,0,0.8); border:1px solid rgba(245,200,0,0.25); padding:5px 12px; border-radius:2px; width:fit-content; margin-top:8px; font-weight:600; }
+  .game-card-tag::before { content:'✦'; font-size:8px; }
+  @media(max-width:768px) { .games-row { grid-template-columns:1fr; } .game-card-photo { height:240px; } }
 
   /* ── SHOWS ── */
   .shows-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; }
@@ -606,7 +647,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     padding: 40px 20px;
   }
   .waterfight-eyebrow {
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: #F5C800;
@@ -632,7 +673,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
   }
   .waterfight-sub {
     font-size: clamp(14px, 2vw, 18px);
-    color: rgba(255,255,255,0.75);
+    color: #fff;
     letter-spacing: 3px;
     text-transform: uppercase;
     font-weight: 300;
@@ -836,6 +877,121 @@ function buildStyles(t: Theme, isDark: boolean): string {
     .location-detail-cell:last-child { border-bottom: none; }
   }
 
+  /* ── SPONSORS ── */
+  .sponsors-section {
+    padding: 80px 40px 90px;
+    background: ${t.bgSection};
+    border-top: 1px solid ${t.borderSection};
+    text-align: center;
+    transition: background 0.45s, border-color 0.45s;
+  }
+  .sponsors-eyebrow {
+    font-size: 10px; letter-spacing: 6px; text-transform: uppercase;
+    color: ${t.textMuted}; font-weight: 600; margin-bottom: 14px;
+    transition: color 0.45s;
+  }
+  .sponsors-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 5vw, 48px);
+    letter-spacing: 6px;
+    color: ${t.text};
+    margin-bottom: 8px;
+    transition: color 0.45s;
+  }
+  .sponsors-sub {
+    font-size: 12px; letter-spacing: 2px; color: ${t.textMuted};
+    font-weight: 300; margin-bottom: 56px; transition: color 0.45s;
+  }
+
+  /* tier rows */
+  .sponsors-tier { margin-bottom: 48px; }
+  .sponsors-tier-label {
+    font-size: 9px; letter-spacing: 5px; text-transform: uppercase;
+    color: ${t.textMuted}; margin-bottom: 24px; display: flex;
+    align-items: center; justify-content: center; gap: 16px;
+    transition: color 0.45s;
+  }
+  .sponsors-tier-label::before,
+  .sponsors-tier-label::after {
+    content: ''; flex: 1; max-width: 80px; height: 1px;
+    background: ${t.border}; transition: background 0.45s;
+  }
+  .sponsors-logos {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    gap: 16px;
+  }
+
+  /* logo pill */
+  .sponsor-pill {
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid ${t.border};
+    background: ${t.bgCard};
+    transition: all 0.35s;
+    cursor: default;
+    box-shadow: ${t.cardShadow};
+  }
+  .sponsor-pill:hover {
+    border-color: #F5C800;
+    background: ${t.bgCardHover};
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(245,200,0,0.12);
+  }
+
+  /* size variants */
+  .sponsor-pill.tier-main  { width: 200px; height: 80px; }
+  .sponsor-pill.tier-gold  { width: 160px; height: 66px; }
+  .sponsor-pill.tier-silver{ width: 130px; height: 54px; }
+
+  .sponsor-pill-name {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 3px;
+    color: ${t.text};
+    transition: color 0.45s;
+    text-align: center;
+    line-height: 1.1;
+  }
+  .tier-main  .sponsor-pill-name { font-size: 20px; }
+  .tier-gold  .sponsor-pill-name { font-size: 16px; }
+  .tier-silver .sponsor-pill-name{ font-size: 13px; }
+
+  .sponsor-pill-sub {
+    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+    color: ${t.textMuted}; margin-top: 4px; transition: color 0.45s;
+  }
+
+  /* become sponsor CTA */
+  .sponsors-cta {
+    margin-top: 52px;
+    display: flex; align-items: center; justify-content: center; gap: 20px;
+    flex-wrap: wrap;
+  }
+  .sponsors-cta-text {
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+    color: ${t.textMuted}; font-weight: 300; transition: color 0.45s;
+  }
+  .sponsor-join-btn {
+    display: inline-block;
+    border: 1.5px solid rgba(245,200,0,0.5);
+    color: #F5C800;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px; letter-spacing: 4px;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: transparent;
+    cursor: pointer;
+  }
+  .sponsor-join-btn:hover {
+    background: #F5C800; color: #0A0A0A; border-color: #F5C800;
+  }
+
+  @media(max-width:600px) {
+    .sponsor-pill.tier-main  { width: 160px; height: 66px; }
+    .sponsor-pill.tier-gold  { width: 130px; height: 54px; }
+    .sponsor-pill.tier-silver{ width: 110px; height: 46px; }
+  }
+
   /* ── FOOTER ── */
   .site-footer { background:${t.bgFooter}; border-top:1px solid rgba(245,200,0,0.15); padding:60px 40px; text-align:center; transition:background 0.45s; }
   .footer-logo { font-family:'Bebas Neue',sans-serif; font-size:40px; letter-spacing:8px; color:#F5C800; margin-bottom:16px; }
@@ -862,6 +1018,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     .hero-title { letter-spacing:-1px; }
     .shows-row { grid-template-columns:1fr; }
     .toggle-label { display:none; }
+    .img-box { height: auto; }
   }
   `;
 }
@@ -945,7 +1102,7 @@ export default function SongkranLanding() {
             <div className="hero-year">2026</div>
             <div className="hero-date-badge">13 – 15 April 2026</div>
             <div className="hero-tags">
-              {["Hands-on Thai Workshops", "Live Cultural Shows", "Local Market Vibes", "Water Fight Zone"].map((tag) => (
+              {["Hands-on Thai Workshops", "Thai Traditional Games", "Live Cultural Shows", "Local Market Vibes", "Water Fight Zone"].map((tag) => (
                 <span key={tag} className="hero-tag">{tag}</span>
               ))}
             </div>
@@ -965,6 +1122,13 @@ export default function SongkranLanding() {
               <div className="poster2-list-label">Workshops</div>
               {["Khao Tom Mud (Sticky Rice & Banana Wrap)", "Som Tam (Thai Green Papaya Salad)", "Thai Flower Garland Making (Phuang Malai)", "Water Blessing Ritual (Song Nam Phra)", "Lotus Petal Folding for Temple Offerings"].map(item => (
                 <div key={item} className="poster2-list-item">{item}</div>
+              ))}
+            </div>
+
+            <div className="poster2-list-group">
+              <div className="poster2-list-label">THAI TRANDITIONAL GAMES</div>
+              {thaigames.map((game) => (
+                <div key={game.name} className="poster2-list-item">{game.name}</div>
               ))}
             </div>
 
@@ -992,7 +1156,7 @@ export default function SongkranLanding() {
             <div className="ticket-location-addr">BTS Phrom Phong Station Exit 4<br />approx. 450 m walk</div>
           </div>
           <div className="ticket-contact">
-            <a href="#" className="cta-btn_contact"><span>Contact us</span></a>
+            <a href="https://www.instagram.com/chapter_market/" target="_blank" className="cta-btn_contact"><span>Contact us</span></a>
           </div>
           <div className="ticket-divider" />
           <a href="https://stripe.com/en-th" className="cta-btn"><span>Book Now →</span></a>
@@ -1002,7 +1166,7 @@ export default function SongkranLanding() {
         <section className="program-section">
           <div className="reveal" ref={addRevealRef}>
             <div className="section-eyebrow">Hands-on Experience</div>
-            <h2 className="section-title">WORK SHOPS</h2>
+            <h2 className="section-title">WORKSHOPS</h2>
           </div>
           <div className="workshops-grid reveal" ref={addRevealRef}>
             {workshops.map((w) => (
@@ -1019,6 +1183,47 @@ export default function SongkranLanding() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ── GAMES ── */}
+        <section className="games-section">
+          <div className="reveal" ref={addRevealRef}>
+            <div className="section-eyebrow">Thai Traditional Games</div>
+            <h2 className="section-title">THAI TRADITIONAL GAMES & FUN    </h2>
+          </div>
+          <div className="games-row reveal" ref={addRevealRef}>
+
+            {/* วิ่งกระสอบ */}
+            <div className="game-card">
+              <div className="game-card-photo">
+                <img src={sack} alt="Sack Race" loading="lazy" />
+                <div className="game-card-photo-overlay" />
+              </div>
+              <div className="game-card-body">
+                <div className="game-card-name">SACK RACE</div>
+                <div className="game-card-desc">
+                  Jump into a sack race! Run as fast as you can. The first to reach the finish line wins. A classic game for all ages.
+                </div>
+                <div className="game-card-tag">Jump &amp; Race to the Finish</div>
+              </div>
+            </div>
+
+            {/* เดินกะลา */}
+            <div className="game-card">
+              <div className="game-card-photo">
+                <img src={galah} alt="Coconut Shell Walk" loading="lazy" />
+                <div className="game-card-photo-overlay" />
+              </div>
+              <div className="game-card-body">
+                <div className="game-card-name">COCONUT WALK</div>
+                <div className="game-card-desc">
+                  Stand on a coconut shell and try to walk! Practice your balance and perseverance. An ancient game that's as fun as any other!
+                </div>
+                <div className="game-card-tag">Balance &amp; Walk Your Way</div>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -1059,7 +1264,7 @@ export default function SongkranLanding() {
           <div className="waterfight-edge-top" />
           <div className="waterfight-edge-bottom" />
           <div className="waterfight-content">
-            <div className="waterfight-eyebrow">💦 The Highlight of Songkran</div>
+            <div className="waterfight-eyebrow">The Highlight of Songkran</div>
             <div className="waterfight-title">WATER<br /><em>FIGHT</em><br />ZONE</div>
             <div className="waterfight-sub">Come ready to get soaked · Songkran 2026</div>
             <div className="waterfight-divider" />
@@ -1091,12 +1296,70 @@ export default function SongkranLanding() {
           </div>
         </section>
 
-        <section className="highlights-section">
+        <section className="highlights-section reveal" ref={addRevealRef}>
           <div className="img-test">
             <img className="img-box" src={photo_section} alt="Photo Section" />
           </div>
         </section>
 
+        {/* ── SPONSORS ── */}
+        <section className="sponsors-section">
+          <div className="reveal" ref={addRevealRef}>
+            <div className="sponsors-eyebrow">Proudly Supported By</div>
+            <h2 className="sponsors-title">SPONSORS &amp; PARTNERS</h2>
+            <p className="sponsors-sub">This event was made possible with the support of these partners.</p>
+          </div>
+
+          {/* Main Sponsor */}
+          <div className="sponsors-tier reveal" ref={addRevealRef}>
+            <div className="sponsors-tier-label">Main Sponsor</div>
+            <div className="sponsors-logos">
+              {[
+                { name: "CHAPTER MARKET", sub: "Host Venue" },
+                { name: "YOUR BRAND",     sub: "Title Sponsor" },
+              ].map(s => (
+                <div key={s.name} className="sponsor-pill tier-main">
+                  <div>
+                    <div className="sponsor-pill-name">{s.name}</div>
+                    <div className="sponsor-pill-sub">{s.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Gold Sponsors */}
+          <div className="sponsors-tier reveal" ref={addRevealRef}>
+            <div className="sponsors-tier-label">Gold Sponsors</div>
+            <div className="sponsors-logos">
+              {["YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
+                <div key={i} className="sponsor-pill tier-gold">
+                  <div className="sponsor-pill-name">{name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Silver Sponsors */}
+          <div className="sponsors-tier reveal" ref={addRevealRef}>
+            <div className="sponsors-tier-label">Silver Sponsors</div>
+            <div className="sponsors-logos">
+              {["YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
+                <div key={i} className="sponsor-pill tier-silver">
+                  <div className="sponsor-pill-name">{name}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Become a sponsor */}
+          <div className="sponsors-cta reveal" ref={addRevealRef}>
+            <span className="sponsors-cta-text">Interested in sponsoring?</span>
+            <a href="mailto:hello@chaptermarket.co" className="sponsor-join-btn">
+              BECOME A SPONSOR →
+            </a>
+          </div>
+        </section>
 
         {/* ── LOCATION ── */}
         <section className="location-section">
@@ -1170,10 +1433,10 @@ export default function SongkranLanding() {
 
         {/* ── FOOTER ── */}
         <footer id="book" className="site-footer">
-          <div className="footer-logo">CHAPTER</div>
+          <div className="footer-logo">CHAPTER MARKET</div>
           <div className="footer-tagline">Songkran of Culture Community & Fun</div>
           <div className="footer-cta">
-            <a href="https://stripe.com/en-th" className="cta-btn">
+            <a href="https://stripe.com/en-th" className="cta-btn_footer">
               <span>Book Now — 2,000 THB</span>
             </a>
           </div>

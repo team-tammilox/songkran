@@ -12,7 +12,7 @@
 import { Helmet } from "react-helmet-async";
 
 // ── Replace this URL with your actual deployed domain ──
-const SITE_URL = "https://songkran-website.woramet-iou-55.workers.dev";
+const SITE_URL = "https://www.songkran-chapter.com/";
 const PAGE_URL = `${SITE_URL}/songkran-2026`;
 
 // ── OG image: export a 1200×630 poster and host it statically ──
