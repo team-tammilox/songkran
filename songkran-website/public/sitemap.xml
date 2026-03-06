@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — Chapter Market · Songkran 2026
+  Place this file at: https://www.chaptermarket.co.th/sitemap.xml
+  Then submit to Google Search Console:
+    Google Search Console → Sitemaps → Add sitemap URL
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ── Homepage ── -->
+  <url>
+    <loc>https://www.chaptermarket.co.th/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ── Songkran 2026 Landing Page (PRIMARY) ── -->
+  <url>
+    <loc>https://www.chaptermarket.co.th/songkran-2026</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <!-- hreflang alternates inline -->
+    <xhtml:link rel="alternate" hreflang="th"        href="https://www.chaptermarket.co.th/songkran-2026?lang=th" />
+    <xhtml:link rel="alternate" hreflang="en"        href="https://www.chaptermarket.co.th/songkran-2026?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.chaptermarket.co.th/songkran-2026" />
+
+    <!-- Page images (helps Google Images ranking) -->
+    <image:image>
+      <image:loc>https://www.chaptermarket.co.th/og/songkran-2026-og.jpg</image:loc>
+      <image:caption>Songkran 2026 Bangkok — Traditional water festival celebration at Chapter Market</image:caption>
+      <image:title>Songkran Bangkok 2026 @ Chapter Market</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.chaptermarket.co.th/images/drum-parade.jpg</image:loc>
+      <image:caption>Thai drum parade and traditional Mor Lam performance at Songkran 2026</image:caption>
+      <image:title>Thai Drum Parade — Songkran 2026 Bangkok</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.chaptermarket.co.th/images/flower-garland-workshop.jpg</image:loc>
+      <image:caption>Hands-on flower garland making workshop (Phuang Malai) at Songkran 2026</image:caption>
+      <image:title>Flower Garland Workshop — Songkran 2026</image:title>
+    </image:image>
+  </url>
+
+  <!-- ── Events index (if you have one) ── -->
+  <url>
+    <loc>https://www.chaptermarket.co.th/events</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

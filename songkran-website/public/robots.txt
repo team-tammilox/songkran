@@ -1,0 +1,13 @@
+# robots.txt — Chapter Market
+# Place at: https://www.chaptermarket.co.th/robots.txt
+
+User-agent: *
+Allow: /
+
+# Block build artifacts / admin paths (adjust to match your stack)
+Disallow: /admin/
+Disallow: /_next/static/chunks/
+Disallow: /api/
+
+# Sitemap location — Google will discover this automatically
+Sitemap: https://www.chaptermarket.co.th/sitemap.xml

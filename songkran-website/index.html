@@ -2,9 +2,193 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>songkran-website</title>
+
+    <!-- ── Favicon ── -->
+    <link rel="icon" type="image/png" href="/Desktop.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ── Theme color ── -->
+    <meta name="theme-color" content="#F5C800" />
+    <meta name="msapplication-TileColor" content="#F5C800" />
+
+    <!-- ── Primary SEO (fallback ก่อน JS โหลด) ── -->
+    <title>Songkran Bangkok 2026 @ Chapter Market | สงกรานต์ 13–15 เมษายน</title>
+    <meta name="description" content="ฉลองสงกรานต์ 2026 ที่ Chapter Market สุขุมวิท 26 กรุงเทพ · Workshop ไทย · โชว์วัฒนธรรม · ตลาด · Water Fight Zone · 13–15 เมษายน 2026 · บัตรเอิร์ลี่เบิร์ด 2,000 บาท" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- ── Canonical ── -->
+    <link rel="canonical" href="https://songkran-website.woramet-iou-55.workers.dev/songkran-2026" />
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Chapter Market" />
+    <meta property="og:title" content="Songkran Bangkok 2026 @ Chapter Market | สงกรานต์ 13–15 เมษายน" />
+    <meta property="og:description" content="ฉลองสงกรานต์ 2026 ที่ Chapter Market สุขุมวิท 26 กรุงเทพ · Workshop ไทย · โชว์วัฒนธรรม · Water Fight Zone · 13–15 เมษายน 2026" />
+    <meta property="og:url" content="https://songkran-website.woramet-iou-55.workers.dev/songkran-2026" />
+    <meta property="og:image" content="https://songkran-website.woramet-iou-55.workers.dev/og/songkran-2026-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Songkran Bangkok 2026 @ Chapter Market Sukhumvit 26" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:locale" content="th_TH" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- ── Twitter / X Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Songkran Bangkok 2026 @ Chapter Market | สงกรานต์ 13–15 เมษายน" />
+    <meta name="twitter:description" content="ฉลองสงกรานต์ 2026 ที่ Chapter Market สุขุมวิท 26 · Workshop ไทย · Water Fight Zone · 13–15 เมษายน 2026" />
+    <meta name="twitter:image" content="https://songkran-website.woramet-iou-55.workers.dev/og/songkran-2026-og.jpg" />
+    <meta name="twitter:image:alt" content="Songkran Bangkok 2026 @ Chapter Market Sukhumvit 26" />
+    <meta name="twitter:site" content="@ChapterMarketBKK" />
+
+    <!-- ── Geo / Local SEO ── -->
+    <meta name="geo.region" content="TH-10" />
+    <meta name="geo.placename" content="Bangkok, Thailand" />
+    <meta name="geo.position" content="13.7278;100.5696" />
+    <meta name="ICBM" content="13.7278, 100.5696" />
+
+    <!-- ── Preconnect (เร็วขึ้น = Core Web Vitals ดีขึ้น) ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ── Preload Hero Image (ลด LCP) ── -->
+    <link
+      rel="preload"
+      as="image"
+      href="/og/songkran-2026-og.jpg"
+      fetchpriority="high"
+    />
+
+    <!-- ── Structured Data: Event ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Songkran Bangkok 2026 @ Chapter Market",
+      "alternateName": ["สงกรานต์ 2026", "Songkran Festival Bangkok 2026"],
+      "description": "Experience authentic Songkran 2026 at Chapter Market, Sukhumvit Soi 26, Bangkok. Hands-on Thai workshops, live cultural shows, Thai costume, local market, street food, and water fight zone — 13–15 April 2026.",
+      "image": ["https://songkran-website.woramet-iou-55.workers.dev/og/songkran-2026-og.jpg"],
+      "startDate": "2026-04-13T10:00:00+07:00",
+      "endDate": "2026-04-15T22:00:00+07:00",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Chapter Market",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sukhumvit Soi 26",
+          "addressLocality": "Wattana",
+          "addressRegion": "Bangkok",
+          "postalCode": "10110",
+          "addressCountry": "TH"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 13.7278,
+          "longitude": 100.5696
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Chapter Market",
+        "url": "https://songkran-website.woramet-iou-55.workers.dev"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Early Bird Ticket",
+          "price": "2000",
+          "priceCurrency": "THB",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-03-01",
+          "validThrough": "2026-03-31",
+          "url": "https://songkran-website.woramet-iou-55.workers.dev/songkran-2026#book"
+        },
+        {
+          "@type": "Offer",
+          "name": "Standard Ticket",
+          "price": "2500",
+          "priceCurrency": "THB",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2026-04-01",
+          "validThrough": "2026-04-15",
+          "url": "https://songkran-website.woramet-iou-55.workers.dev/songkran-2026#book"
+        }
+      ],
+      "performer": [
+        { "@type": "PerformingGroup", "name": "Mor Lam Traditional Music Group" },
+        { "@type": "PerformingGroup", "name": "Long Drum Dance (Glong Yao) Ensemble" }
+      ],
+      "keywords": "Songkran 2026, สงกรานต์ 2026, Songkran Bangkok, Thai New Year Festival, Chapter Market, Sukhumvit 26"
+    }
+    </script>
+
+    <!-- ── Structured Data: BreadcrumbList ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Chapter Market", "item": "https://songkran-website.woramet-iou-55.workers.dev" },
+        { "@type": "ListItem", "position": 2, "name": "Events", "item": "https://songkran-website.woramet-iou-55.workers.dev/events" },
+        { "@type": "ListItem", "position": 3, "name": "Songkran Bangkok 2026", "item": "https://songkran-website.woramet-iou-55.workers.dev/songkran-2026" }
+      ]
+    }
+    </script>
+
+    <!-- ── Structured Data: FAQPage ── -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Songkran 2026 at Chapter Market is on what dates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Songkran 2026 at Chapter Market runs from 13 to 15 April 2026 at Sukhumvit Soi 26, Bangkok."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much is the ticket for Songkran 2026 Chapter Market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Early Bird tickets are 2,000 THB (valid 1–31 March 2026). Standard tickets are 2,500 THB from 1 April onwards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get to Chapter Market Sukhumvit 26?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Take BTS Skytrain to Phrom Phong station, use Exit 4, and walk approximately 450 metres to Chapter Market on Sukhumvit Soi 26."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What activities are available at Songkran Chapter Market 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Activities include hands-on Thai workshops (Khao Tom Mud, Som Tam, Flower Garland Making, Water Blessing Ritual), live cultural shows (Mor Lam, Long Drum Dance), Thai costume dressing, local market, authentic Thai street food, and a water fight zone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a water fight zone at Songkran 2026 Chapter Market?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — a dedicated water fight zone is available for the classic Songkran water battle experience. Come ready to get wet!"
+          }
+        }
+      ]
+    }
+    </script>
+
   </head>
   <body>
     <div id="root"></div>
