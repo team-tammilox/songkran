@@ -93,7 +93,6 @@ type Theme = {
 
 // ─── DATA ───────────────────────────────────────────────────────
 type Workshop = { num: string; title: string; sub: string; photo: string; icon?: string };
-type Game = { name: string; desc: string; photo: string; emoji?: string };
 type Show = { name: string; desc: string; photo: string; emoji?: string };
 type Highlight = { name: string; desc: string; photo: string; icon?: string };
 
@@ -110,11 +109,6 @@ const shows: Show[] = [
   { name: "Long Drum Dance", desc: "Witness the ancient Glong Yao drum performance · Cultural spectacle", photo: Photo_DrumParade },
   { name: "Flag Parade Folding", desc: "Experience the vibrant Thai flag parade · A colorful procession", photo: Photo_Flag },
 ];
-
-const thaigames: Game[] = [
-  { name: "Galah", desc: "Traditional Thai tag game · Fast-paced and fun", photo: galah },
-  { name: "Sack Race", desc: "Hop your way to victory · Classic sack racing game", photo: sack },
-]
 
 const highlights: Highlight[] = [
   { name: "Thai Costume", desc: "Dress up in traditional Thai attire for stunning photos", photo: Photo_Costume },
@@ -468,7 +462,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
 
   .cta-btn_contact { display:inline-block; background:${t.ctaBtnBg};  color:${t.ctaBtnClr}; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:5px; padding:18px 50px; text-decoration:none; position:relative; overflow:hidden; cursor:pointer; border:none; transition:all 0.3s; }
   .cta-btn_contact::after { content:''; position:absolute; inset:0;  background:#fff; transform:translateX(-100%); transition:transform 0.3s; }
-  .cta-btn_contact:hover { color:#0A0A0A; border:2px solid #000; }
+  .cta-btn_contact:hover { color:#0A0A0A; border:1px solid #000; }
   .cta-btn_contact:hover::after { transform:translateX(0); }
   .cta-btn_contact span { position:relative; z-index:1; }
 
@@ -1019,6 +1013,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     .shows-row { grid-template-columns:1fr; }
     .toggle-label { display:none; }
     .img-box { height: auto; }
+    .thai-sub { color:#fff;}
   }
   `;
 }
@@ -1126,9 +1121,9 @@ export default function SongkranLanding() {
             </div>
 
             <div className="poster2-list-group">
-              <div className="poster2-list-label">THAI TRANDITIONAL GAMES</div>
-              {thaigames.map((game) => (
-                <div key={game.name} className="poster2-list-item">{game.name}</div>
+              <div className="poster2-list-label">Games</div>
+              {["Sack Race", "Coconut Shell Walk"].map(item => (
+                <div key={item} className="poster2-list-item">{item}</div>
               ))}
             </div>
 
@@ -1312,7 +1307,6 @@ export default function SongkranLanding() {
 
           {/* Main Sponsor */}
           <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-tier-label">Main Sponsor</div>
             <div className="sponsors-logos">
               {[
                 { name: "CHAPTER MARKET", sub: "Host Venue" },
@@ -1330,7 +1324,6 @@ export default function SongkranLanding() {
 
           {/* Gold Sponsors */}
           <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-tier-label">Gold Sponsors</div>
             <div className="sponsors-logos">
               {["YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
                 <div key={i} className="sponsor-pill tier-gold">
@@ -1342,7 +1335,6 @@ export default function SongkranLanding() {
 
           {/* Silver Sponsors */}
           <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-tier-label">Silver Sponsors</div>
             <div className="sponsors-logos">
               {["YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
                 <div key={i} className="sponsor-pill tier-silver">
@@ -1354,7 +1346,6 @@ export default function SongkranLanding() {
 
           {/* Become a sponsor */}
           <div className="sponsors-cta reveal" ref={addRevealRef}>
-            <span className="sponsors-cta-text">Interested in sponsoring?</span>
             <a href="mailto:hello@chaptermarket.co" className="sponsor-join-btn">
               BECOME A SPONSOR →
             </a>
