@@ -16,7 +16,7 @@ const SITE_URL = "https://www.songkran-chapter.com/";
 const PAGE_URL = `${SITE_URL}/songkran-2026`;
 
 // ── OG image: export a 1200×630 poster and host it statically ──
-const OG_IMAGE = `${SITE_URL}/og/songkran-2026-og.jpg`;
+const OG_IMAGE = `${SITE_URL}/og/songkran-2026-og-v1.png`;
 const OG_IMAGE_WIDTH = "1200";
 const OG_IMAGE_HEIGHT = "630";
 

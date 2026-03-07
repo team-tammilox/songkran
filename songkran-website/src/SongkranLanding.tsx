@@ -1013,7 +1013,7 @@ function buildStyles(t: Theme, isDark: boolean): string {
     .shows-row { grid-template-columns:1fr; }
     .toggle-label { display:none; }
     .img-box { height: auto; }
-    .thai-sub { color:#fff;}
+    .thai-sub { display:none; }
   }
   `;
 }
@@ -1346,7 +1346,7 @@ export default function SongkranLanding() {
 
           {/* Become a sponsor */}
           <div className="sponsors-cta reveal" ref={addRevealRef}>
-            <a href="mailto:hello@chaptermarket.co" className="sponsor-join-btn">
+            <a href="https://www.instagram.com/chapter_market/" target="_blank" className="sponsor-join-btn">
               BECOME A SPONSOR →
             </a>
           </div>
