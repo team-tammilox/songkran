@@ -1121,7 +1121,7 @@ export default function SongkranLanding() {
             </div>
 
             <div className="poster2-list-group">
-              <div className="poster2-list-label">Games</div>
+              <div className="poster2-list-label">THAI TRADITIONAL GAMES</div>
               {["Sack Race", "Coconut Shell Walk"].map(item => (
                 <div key={item} className="poster2-list-item">{item}</div>
               ))}
@@ -1306,7 +1306,7 @@ export default function SongkranLanding() {
           </div>
 
           {/* Main Sponsor */}
-          <div className="sponsors-tier reveal" ref={addRevealRef}>
+          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
             <div className="sponsors-logos">
               {[
                 { name: "CHAPTER MARKET", sub: "Host Venue" },
@@ -1320,10 +1320,10 @@ export default function SongkranLanding() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Gold Sponsors */}
-          <div className="sponsors-tier reveal" ref={addRevealRef}>
+          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
             <div className="sponsors-logos">
               {["YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
                 <div key={i} className="sponsor-pill tier-gold">
@@ -1331,18 +1331,18 @@ export default function SongkranLanding() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Silver Sponsors */}
-          <div className="sponsors-tier reveal" ref={addRevealRef}>
+          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
             <div className="sponsors-logos">
-              {["YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
+              {[""].map((name, i) => (
                 <div key={i} className="sponsor-pill tier-silver">
                   <div className="sponsor-pill-name">{name}</div>
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Become a sponsor */}
           <div className="sponsors-cta reveal" ref={addRevealRef}>

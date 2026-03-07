@@ -1,5 +1,5 @@
 # robots.txt — Chapter Market
-# Place at: https://www.songkran-chapter.com//robots.txt
+# Place at: https://www.songkran-chapter.com/robots.txt
 
 User-agent: *
 Allow: /
