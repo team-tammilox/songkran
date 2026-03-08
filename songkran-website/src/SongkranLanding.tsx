@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Poster_1, Poster_2, Poster_3, photo_section, galah, sack } from "./assets";
+import { Poster_1, Poster_2, Poster_3, photo_section, galah, sack, } from "./assets";
 import SongkranSEO from "./components/SEO";
 
 // Photo imports — 10 event images
@@ -15,6 +15,8 @@ import Photo_MorLam from "./assets/messageImage_1772800884529.jpg";
 import Photo_Lotus from "./assets/lotus.jpg";
 import Photo_WaterFight from "./assets/20260305_1453_Image Generation_simple_compose_01kjyfqwwbe7dvsb0c2zs5bg3n.png";
 import Photo_Flag from "./assets/flag.jpg";
+import Chapter_logo from "./assets/Desktop.png";
+import Nomads_logo from "./assets/nomads_for_Impact_icon.png";
 
 // ─── THEME TOKENS ───────────────────────────────────────────────
 const themes = {
@@ -937,6 +939,58 @@ function buildStyles(t: Theme, isDark: boolean): string {
   .sponsor-pill.tier-gold  { width: 160px; height: 66px; }
   .sponsor-pill.tier-silver{ width: 130px; height: 54px; }
 
+  /* flat equal partner card */
+  .partner-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 0;
+  }
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 180px;
+    padding: 28px 20px;
+    border: 1px solid ${t.border};
+    background: ${t.bgCard};
+    box-shadow: ${t.cardShadow};
+    transition: all 0.35s;
+    cursor: default;
+  }
+  .partner-card:hover {
+    border-color: #F5C800;
+    background: ${t.bgCardHover};
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(245,200,0,0.14);
+  }
+  .partner-logo-wrap {
+    width: 100px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .partner-logo-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+  .partner-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: ${t.textMuted};
+    text-align: center;
+    line-height: 1.2;
+    transition: color 0.45s;
+  }
+
   .sponsor-pill-name {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 3px;
@@ -949,9 +1003,8 @@ function buildStyles(t: Theme, isDark: boolean): string {
   .tier-gold  .sponsor-pill-name { font-size: 16px; }
   .tier-silver .sponsor-pill-name{ font-size: 13px; }
 
-  .sponsor-pill-sub {
-    font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-    color: ${t.textMuted}; margin-top: 4px; transition: color 0.45s;
+  .sponsor-pill-img {
+    width: 100%; height: 100%;
   }
 
   /* become sponsor CTA */
@@ -1122,7 +1175,7 @@ export default function SongkranLanding() {
 
             <div className="poster2-list-group">
               <div className="poster2-list-label">THAI TRADITIONAL GAMES</div>
-              {["Sack Race", "Coconut Shell Walk"].map(item => (
+              {["Coconut Shell Walking Race (Wing Kala)", "Sack Race (classic fun game)"].map(item => (
                 <div key={item} className="poster2-list-item">{item}</div>
               ))}
             </div>
@@ -1133,6 +1186,13 @@ export default function SongkranLanding() {
                 <div key={item} className="poster2-list-item">{item}</div>
               ))}
             </div>
+
+            <div className="poster2-list-group">
+              <div className="poster2-list-label" style={{ textAlign: "center", color: "#000", fontSize: "34px", marginTop: "20px", fontWeight: "600" }}>
+                Activities worth more than 6,000 THB
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -1154,7 +1214,7 @@ export default function SongkranLanding() {
             <a href="https://www.instagram.com/chapter_market/" target="_blank" className="cta-btn_contact"><span>Contact us</span></a>
           </div>
           <div className="ticket-divider" />
-          <a href="https://stripe.com/en-th" className="cta-btn"><span>Book Now →</span></a>
+          <a href="https://buy.stripe.com/6oUfZh9VT0TL08WgyZ4Ni01" target="_blank" className="cta-btn"><span>Book Now →</span></a>
         </section>
 
         {/* ── WORKSHOPS ── */}
@@ -1305,44 +1365,20 @@ export default function SongkranLanding() {
             <p className="sponsors-sub">This event was made possible with the support of these partners.</p>
           </div>
 
-          {/* Main Sponsor */}
-          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-logos">
-              {[
-                { name: "CHAPTER MARKET", sub: "Host Venue" },
-                { name: "YOUR BRAND",     sub: "Title Sponsor" },
-              ].map(s => (
-                <div key={s.name} className="sponsor-pill tier-main">
-                  <div>
-                    <div className="sponsor-pill-name">{s.name}</div>
-                    <div className="sponsor-pill-sub">{s.sub}</div>
-                  </div>
+          {/* Partners — flat equal grid, no tier */}
+          <div className="partner-grid reveal" ref={addRevealRef}>
+            {[
+              { name: "CHAPTER MARKET", logo: Chapter_logo },
+              { name: "NOMADS FOR IMPACT", logo: Nomads_logo },
+            ].map(s => (
+              <div key={s.name} className="partner-card">
+                <div className="partner-logo-wrap">
+                  <img src={s.logo} alt={s.name} />
                 </div>
-              ))}
-            </div>
-          </div> */}
-
-          {/* Gold Sponsors */}
-          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-logos">
-              {["YOUR BRAND","YOUR BRAND","YOUR BRAND"].map((name, i) => (
-                <div key={i} className="sponsor-pill tier-gold">
-                  <div className="sponsor-pill-name">{name}</div>
-                </div>
-              ))}
-            </div>
-          </div> */}
-
-          {/* Silver Sponsors */}
-          {/* <div className="sponsors-tier reveal" ref={addRevealRef}>
-            <div className="sponsors-logos">
-              {[""].map((name, i) => (
-                <div key={i} className="sponsor-pill tier-silver">
-                  <div className="sponsor-pill-name">{name}</div>
-                </div>
-              ))}
-            </div>
-          </div> */}
+                <div className="partner-name">{s.name}</div>
+              </div>
+            ))}
+          </div>
 
           {/* Become a sponsor */}
           <div className="sponsors-cta reveal" ref={addRevealRef}>
@@ -1427,7 +1463,7 @@ export default function SongkranLanding() {
           <div className="footer-logo">CHAPTER MARKET</div>
           <div className="footer-tagline">Songkran of Culture Community & Fun</div>
           <div className="footer-cta">
-            <a href="https://stripe.com/en-th" className="cta-btn_footer">
+            <a href="https://buy.stripe.com/6oUfZh9VT0TL08WgyZ4Ni01" target="_blank" className="cta-btn_footer">
               <span>Book Now — 2,000 THB</span>
             </a>
           </div>
